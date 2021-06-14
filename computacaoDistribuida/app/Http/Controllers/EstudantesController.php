@@ -63,10 +63,10 @@ class EstudantesController extends Controller
             $estudante = Estudante::findOrFail($id);
             $estudante->update($request->all());
             
-            $estudanteAtualizado = Aluno::findOrFail($id);
+            $estudanteAtualizado = Estudante::findOrFail($id);
             return response()->json(
                     [
-                        'alunoAtualizado' => [
+                        'estudanteAtualizado' => [
                             'id' => $estudanteAtualizado['id'],
                             'rga' => $estudanteAtualizado['rga'],
                             'nome' => $estudanteAtualizado['nome'],
@@ -93,7 +93,7 @@ class EstudantesController extends Controller
                 $estudante->delete();
                 return response()->json(
                         [
-                            'alunoDeletado' => [
+                            'estudanteDeletado' => [
                             'id' => $estudanteDeletado['id'],
                             'rga' => $estudanteDeletado['rga'],
                             'nome' => $estudanteDeletado['nome'],
