@@ -11,7 +11,7 @@ class CarteirinhasController extends Controller
         try{            
             $carteirinhas = Carteirinha::get();
                        
-            if(empty($carteirinhas)){
+            if(!empty($carteirinhas[0])){
                 echo $carteirinhas;
             }
             else {
@@ -25,8 +25,8 @@ class CarteirinhasController extends Controller
     public function inserirCarteirinha(Request $request){
         try{
             $estudante = Carteirinha::buscarRGA($request['rga_carteirinha']);
-            
-            if(empty($estudante)){
+
+            if(!empty($estudante[0])){
                 $carteirinha = Carteirinha::create($request->all());
 
                 return response()->json(
@@ -63,6 +63,27 @@ class CarteirinhasController extends Controller
     
     public function atualizarCarteirinha(Request $request, $id){
         try{
+            if(isset($request['rga_carteirinha'])){
+                $estudante = Carteirinha::buscarRGA($request['rga_carteirinha']);
+
+                if(!empty($estudante[0])){
+                    return $this->realizarAtualizacao($request, $id);
+                }
+                else{
+                    return response()->json(['erro' => 'RGA não registrado'], 404);
+                }
+            }
+            else {
+                return $this->realizarAtualizacao($request, $id);
+            }
+            
+        } catch (Exception $ex) {
+            return response()->json(['erro' => $ex], 404);
+        }
+    }
+    
+    private function realizarAtualizacao(Request $request, $id){
+        try{
             $carteirinha = Carteirinha::findOrFail($id);
             $carteirinha->update($request->all());
             
@@ -83,7 +104,8 @@ class CarteirinhasController extends Controller
             return response()->json(['erro' => $ex], 404);
         }
     }
-    
+
+
     public function deletarCarteirinha($id){
         try{
             $carteirinha = Carteirinha::findOrFail($id);

@@ -15,9 +15,8 @@ class Carteirinha extends Model
     
     public static function buscarRGA($rga) {
         $estudante = Estudante::query()
-                ->where('rga', $rga) 
-                ->orderBy('created_at')
-                ->get(); 
+                ->where('rga', $rga)
+                ->get();  
         
         return $estudante;
     }

@@ -13,7 +13,7 @@ class EstudantesController extends Controller
             
             $estudantes = Estudante::buscarEstudantePeloNome($nome);
                        
-            if(empty($estudantes)){
+            if(!empty($estudantes[0])){
                 echo $estudantes;
             }
             else {
