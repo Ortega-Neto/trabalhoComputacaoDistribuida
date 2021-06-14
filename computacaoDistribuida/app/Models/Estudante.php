@@ -17,13 +17,13 @@ class Estudante extends Model
     ];
     
     public static function buscarEstudantePeloNome($nome) {
-        $alunos = Estudante::query()
+        $estudantes = Estudante::query()
                 ->where('nome', 'LIKE', "%{$nome}%") 
                 ->orderBy('created_at')
                 ->get(); 
         
-        $arrayDeAlunos = json_decode($alunos, true);
+        $arrayDeEstudantes = json_decode($estudantes, true);
         
-        return json_encode($arrayDeAlunos);
+        return json_encode($arrayDeEstudantes);
     }
 }
