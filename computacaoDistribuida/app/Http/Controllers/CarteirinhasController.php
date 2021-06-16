@@ -31,7 +31,7 @@ class CarteirinhasController extends Controller
 
                 return response()->json(
                         [
-                            'carDeletadoteirinha' => [
+                            'carteirinhaInserida' => [
                                 'id' => $carteirinha['id'],
                                 'rga_carteirinha' => $carteirinha['rga_carteirinha'],
                                 'data_emissao' => $carteirinha['data_emissao'],
@@ -90,7 +90,7 @@ class CarteirinhasController extends Controller
             $carteirinhaAtualizada = Carteirinha::findOrFail($id);
             return response()->json(
                     [
-                        'carDeletadoteirinha' => [
+                        'carteirinhaAtualizada' => [
                             'id' => $carteirinhaAtualizada['id'],
                             'rga_carteirinha' => $carteirinhaAtualizada['rga_carteirinha'],
                             'data_emissao' => $carteirinhaAtualizada['data_emissao'],
@@ -115,7 +115,7 @@ class CarteirinhasController extends Controller
                 $carteirinha->delete();
                 return response()->json(
                         [
-                            'carteirinhaDeletado' => [
+                            'carteirinhaDeletada' => [
                                 'id' => $carteirinhaDeletada['id'],
                                 'rga_carteirinha' => $carteirinhaDeletada['rga_carteirinha'],
                                 'data_emissao' => $carteirinhaDeletada['data_emissao'],
