@@ -3,6 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/users', [\App\Http\Controllers\UsersController::class, 'buscarUsers']);
+
+Route::post('/users', [\App\Http\Controllers\UsersController::class, 'inserirUser']);
+
+Route::get('/users/{id}', [\App\Http\Controllers\UsersController::class, 'buscarUserPeloId']);
+
+Route::put('/users/{id}', [\App\Http\Controllers\UsersController::class, 'atualizarUser']);
+
+Route::delete('/users/{id}', [\App\Http\Controllers\UsersController::class, 'deletarUser']);
+
+
 Route::get('/estudantes', [\App\Http\Controllers\EstudantesController::class, 'buscarEstudantes']);
 
 Route::post('/estudantes', [\App\Http\Controllers\EstudantesController::class, 'inserirEstudante']);

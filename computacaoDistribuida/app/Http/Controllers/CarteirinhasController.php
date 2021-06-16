@@ -116,11 +116,11 @@ class CarteirinhasController extends Controller
                 return response()->json(
                         [
                             'carteirinhaDeletado' => [
-                            'id' => $carteirinhaDeletada['id'],
-                            'rga_carteirinha' => $carteirinhaDeletada['rga_carteirinha'],
-                            'data_emissao' => $carteirinhaDeletada['data_emissao'],
-                            'created_at' => $carteirinhaDeletada['created_at'],
-                            'updated_at' => $carteirinhaDeletada['updated_at']
+                                'id' => $carteirinhaDeletada['id'],
+                                'rga_carteirinha' => $carteirinhaDeletada['rga_carteirinha'],
+                                'data_emissao' => $carteirinhaDeletada['data_emissao'],
+                                'created_at' => $carteirinhaDeletada['created_at'],
+                                'updated_at' => $carteirinhaDeletada['updated_at']
                             ]
                         ],
                         200

@@ -94,14 +94,14 @@ class EstudantesController extends Controller
                 return response()->json(
                         [
                             'estudanteDeletado' => [
-                            'id' => $estudanteDeletado['id'],
-                            'rga' => $estudanteDeletado['rga'],
-                            'nome' => $estudanteDeletado['nome'],
-                            'cpf' => $estudanteDeletado['cpf'],
-                            'data_nascimento' => $estudanteDeletado['data_nascimento'],
-                            'curso' => $estudanteDeletado['curso'],
-                            'created_at' => $estudanteDeletado['created_at'],
-                            'updated_at' => $estudanteDeletado['updated_at']
+                                'id' => $estudanteDeletado['id'],
+                                'rga' => $estudanteDeletado['rga'],
+                                'nome' => $estudanteDeletado['nome'],
+                                'cpf' => $estudanteDeletado['cpf'],
+                                'data_nascimento' => $estudanteDeletado['data_nascimento'],
+                                'curso' => $estudanteDeletado['curso'],
+                                'created_at' => $estudanteDeletado['created_at'],
+                                'updated_at' => $estudanteDeletado['updated_at']
                             ]
                         ],
                         200
