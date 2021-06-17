@@ -19,13 +19,14 @@ class CreateEventosResponsaveis extends Migration
             $table->string('data', 10);
             $table->integer('lote');
             $table->decimal('valor_lote', 10, 2, true);
-            $table->string('id_responsavel')->references('id_responsavel')->on('resposaveis');
+            $table->integer('id_responsavel');
             $table->timestamps();
         });
         
-        Schema::create('responsaveis', function (Blueprint $table) {
-            $table->string('id_responsavel')->references('id')->on('users');
-            $table->string('id_evento')->references('id')->on('eventos');
+        Schema::create('responsavels', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_responsavel');
+            $table->integer('id_evento')->nullable();
             $table->timestamps();
         });
     }

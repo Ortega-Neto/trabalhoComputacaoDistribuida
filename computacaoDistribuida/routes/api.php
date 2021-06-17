@@ -58,14 +58,14 @@ Route::put('/produtos/{id}', [\App\Http\Controllers\ProdutosController::class, '
 Route::delete('/produtos/{id}', [\App\Http\Controllers\ProdutosController::class, 'deletarProduto']);
 
 
-Route::get('/responsaveis', [\App\Http\Controllers\ResponsaveisController::class, 'buscarResponsaveis']);
+Route::get('/responsaveis', [\App\Http\Controllers\ResponsavelsController::class, 'buscarResponsaveis']);
 
-Route::post('/responsaveis', [\App\Http\Controllers\ResponsaveisController::class, 'inserirResponsavel']);
+Route::post('/responsaveis', [\App\Http\Controllers\ResponsavelsController::class, 'inserirResponsavel']);
 
-Route::get('/responsaveis/{id}', [\App\Http\Controllers\ResponsaveisController::class, 'buscarResponsavelPeloId']);
+Route::get('/responsaveis/{id}', [\App\Http\Controllers\ResponsavelsController::class, 'buscarResponsavelPeloId']);
 
-Route::put('/responsaveis/{id}', [\App\Http\Controllers\ResponsaveisController::class, 'atualizarResponsavel']);
+Route::put('/responsaveis/{id}', [\App\Http\Controllers\ResponsavelsController::class, 'atualizarResponsavel']);
 
-Route::delete('/responsaveis/{id}', [\App\Http\Controllers\ResponsaveisController::class, 'deletarResponsavel']);
+Route::delete('/responsaveis/{id}', [\App\Http\Controllers\ResponsavelsController::class, 'deletarResponsavel']);
 
 

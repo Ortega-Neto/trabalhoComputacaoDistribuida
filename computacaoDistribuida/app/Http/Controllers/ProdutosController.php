@@ -24,9 +24,9 @@ class ProdutosController extends Controller
 
     public function inserirProduto(Request $request){
         try{
-            $estudante = Produto::buscarIdUser($request['id_administrador']);
+            $user = Produto::buscarIdUser($request['id_administrador']);
 
-            if(!empty($estudante[0])){
+            if(!empty($user[0])){
                 $produto = Produto::create($request->all());
 
                 return response()->json(
